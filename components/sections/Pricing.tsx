@@ -108,7 +108,7 @@ export default function Pricing() {
               </h3>
 
               <p
-                className={`text-xs leading-relaxed mb-6 ${
+                className={`text-sm leading-relaxed mb-6 ${
                   tier.popular ? 'text-gold' : 'text-gold'
                 }`}
               >
@@ -136,13 +136,13 @@ export default function Pricing() {
                 }`}
               />
 
-              <ul className="flex flex-col gap-3 flex-1 mb-6">
-                {tier.features.map((f) => (
+              <ul className="flex flex-col flex-1 mb-6">
+                {tier.features.map((f, i) => (
                   <li
                     key={f}
-                    className={`text-xs flex items-start gap-2 leading-relaxed ${
-                      tier.popular ? 'text-white/70' : 'text-muted'
-                    }`}
+                    className={`text-sm flex items-start gap-2 leading-relaxed py-3 ${
+                      i > 0 ? (tier.popular ? 'border-t border-white/10' : 'border-t border-divider') : ''
+                    } ${tier.popular ? 'text-white/70' : 'text-muted'}`}
                   >
                     <span className="shrink-0 text-gold mt-px">—</span>
                     {f}

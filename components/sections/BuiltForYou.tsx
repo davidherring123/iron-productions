@@ -104,10 +104,10 @@ export default function BuiltForYou() {
                 {point.icon}
               </div>
               <div>
-                <h3 className="text-sm font-bold text-foreground mb-3">
+                <h3 className="text-base font-bold text-foreground mb-3">
                   {point.title}
                 </h3>
-                <p className="text-sm text-gold leading-relaxed">{point.body}</p>
+                <p className="text-base text-gold leading-relaxed">{point.body}</p>
               </div>
             </motion.div>
           ))}

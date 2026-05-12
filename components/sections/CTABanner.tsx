@@ -22,7 +22,7 @@ export default function CTABanner() {
           <em className="text-gold not-italic font-bold">already posting.</em>
         </motion.h2>
 
-        <motion.p variants={fadeUp} className="text-sm text-white/50 leading-relaxed max-w-md">
+        <motion.p variants={fadeUp} className="text-base text-white/50 leading-relaxed max-w-md">
           Book a free 20-minute consultation. We&apos;ll figure out exactly what makes sense
           for your market and your goals — no commitment required.
         </motion.p>

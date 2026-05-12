@@ -59,15 +59,15 @@ export default function HowItWorks() {
             <motion.div
               key={step.number}
               variants={fadeUp}
-              className="md:px-10 first:pl-0 last:pr-0 pt-10 md:pt-0"
+              className="md:px-10 first:pl-0 last:pr-0 py-10 md:py-0"
             >
               <p className="text-5xl font-bold text-white/20 mb-8 leading-none">
                 {step.number}
               </p>
-              <h3 className="text-sm font-bold text-background mb-3">
+              <h3 className="text-base font-bold text-background mb-3">
                 {step.title}
               </h3>
-              <p className="text-sm text-white/50 leading-relaxed">{step.body}</p>
+              <p className="text-base text-white/50 leading-relaxed">{step.body}</p>
             </motion.div>
           ))}
         </motion.div>

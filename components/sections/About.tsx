@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { fadeUp, slideInLeft, slideInRight, stagger, defaultViewport } from '@/lib/animations';
+import { fadeUp, slideInRight, stagger, defaultViewport } from '@/lib/animations';
 
 export default function About() {
   return (
@@ -17,7 +17,7 @@ export default function About() {
       <div className="max-w-6xl w-full flex flex-col md:flex-row items-center gap-16">
         {/* Photo — Mobile: full width | Desktop: left half */}
         <motion.div
-          variants={slideInLeft}
+          variants={fadeUp}
           className="relative w-full md:w-1/2 aspect-[3/4] overflow-hidden"
         >
           <Image

@@ -46,7 +46,7 @@ export default function Hero() {
 
           <motion.p
             variants={fadeUp}
-            className="text-sm text-muted max-w-sm mb-10 leading-relaxed"
+            className="text-base text-muted max-w-sm mb-10 leading-relaxed"
           >
             Done-for-you listing videos, social content, and brand films — built for
             real estate agents who are serious about growing.

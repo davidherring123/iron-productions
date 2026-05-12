@@ -34,7 +34,7 @@ export default function Contact() {
         >
           Ready to start?
         </motion.h2>
-        <motion.p variants={fadeUp} className="text-sm text-muted mb-10 leading-relaxed">
+        <motion.p variants={fadeUp} className="text-base text-muted mb-10 leading-relaxed">
           Tell us about yourself and what you&apos;re looking for. We&apos;ll get back to you
           within 48 hours.
         </motion.p>
@@ -52,7 +52,7 @@ export default function Contact() {
               <input
                 type="text"
                 placeholder="Jane Smith"
-                className="border border-divider px-4 py-3 text-sm text-foreground placeholder:text-muted/50 focus:outline-none focus:border-foreground/40 transition-colors bg-transparent"
+                className="border border-divider px-4 py-3 text-base text-foreground placeholder:text-muted/50 focus:outline-none focus:border-foreground/40 transition-colors bg-transparent"
               />
             </div>
             <div className="flex-1 flex flex-col gap-2">
@@ -62,7 +62,7 @@ export default function Contact() {
               <input
                 type="email"
                 placeholder="jane@brokerage.com"
-                className="border border-divider px-4 py-3 text-sm text-foreground placeholder:text-muted/50 focus:outline-none focus:border-foreground/40 transition-colors bg-transparent"
+                className="border border-divider px-4 py-3 text-base text-foreground placeholder:text-muted/50 focus:outline-none focus:border-foreground/40 transition-colors bg-transparent"
               />
             </div>
           </motion.div>
@@ -71,7 +71,7 @@ export default function Contact() {
             <label className="text-xs uppercase tracking-widest text-muted">
               Package
             </label>
-            <select className="border border-divider px-4 py-3 text-sm text-foreground focus:outline-none focus:border-foreground/40 transition-colors bg-background appearance-none cursor-pointer">
+            <select className="border border-divider px-4 py-3 text-base text-foreground focus:outline-none focus:border-foreground/40 transition-colors bg-background appearance-none cursor-pointer">
               <option value="">Select a package...</option>
               {packages.map((p) => (
                 <option key={p} value={p}>
@@ -88,7 +88,7 @@ export default function Contact() {
             <textarea
               rows={5}
               placeholder="What are you trying to accomplish?"
-              className="border border-divider px-4 py-3 text-sm text-foreground placeholder:text-muted/50 focus:outline-none focus:border-foreground/40 transition-colors bg-transparent resize-none"
+              className="border border-divider px-4 py-3 text-base text-foreground placeholder:text-muted/50 focus:outline-none focus:border-foreground/40 transition-colors bg-transparent resize-none"
             />
           </motion.div>
 

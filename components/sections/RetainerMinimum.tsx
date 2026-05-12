@@ -29,7 +29,7 @@ export default function RetainerMinimum() {
           >
             Why we require a 3-month minimum on retainers
           </motion.h3>
-          <motion.p variants={fadeUp} className="text-sm text-muted leading-relaxed">
+          <motion.p variants={fadeUp} className="text-base text-muted leading-relaxed">
             Real estate is a relationship business. New clients don&apos;t come in week
             two — they come after they&apos;ve seen you consistently, trusted your face,
             and felt like they already know you. A 3-month runway gives your content
