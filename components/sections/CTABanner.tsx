@@ -16,10 +16,10 @@ export default function CTABanner() {
       <div className="max-w-3xl w-full text-center flex flex-col items-center gap-8">
         <motion.h2
           variants={fadeUp}
-          className="text-4xl md:text-5xl font-bold text-background leading-tight"
+          className="text-4xl md:text-5xl font-bold text-background leading-tight font-serif"
         >
           The agents growing fastest right now are the ones{' '}
-          <em className="text-[#C9A96E] not-italic font-bold">already posting.</em>
+          <em className="text-gold not-italic font-bold">already posting.</em>
         </motion.h2>
 
         <motion.p variants={fadeUp} className="text-sm text-white/50 leading-relaxed max-w-md">
@@ -30,7 +30,7 @@ export default function CTABanner() {
         <motion.a
           variants={fadeUp}
           href="#contact"
-          className="bg-[#C9A96E] text-foreground text-xs font-semibold uppercase tracking-widest px-12 py-5 hover:opacity-90 transition-opacity"
+          className="bg-gold text-foreground text-xs font-semibold uppercase tracking-widest px-12 py-5 hover:opacity-90 transition-opacity"
         >
           Book Your Free Consultation
         </motion.a>

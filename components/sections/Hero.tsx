@@ -16,10 +16,11 @@ const innerPad = 'clamp(2rem, 4vw, 4rem)';
 
 export default function Hero() {
   return (
-    <section className="flex-1 flex flex-col lg:flex-row min-h-0">
-      {/* ── Left: cream ── */}
+    <section id="hero" className="min-h-screen lg:h-screen flex flex-col lg:flex-row bg-foreground overflow-hidden">
+      {/* ── Left: cream — extends past 50% then clips at an angle ── */}
       <motion.div
-        className="bg-background w-full lg:w-1/2 flex items-center py-28 lg:py-0"
+        className="bg-background w-full lg:w-[calc(50%+4rem)] relative z-10 flex items-center py-28 lg:py-0
+                   lg:[clip-path:polygon(0_0,100%_0,calc(100%-8rem)_100%,0_100%)]"
         style={{ paddingLeft: outerPad, paddingRight: innerPad }}
         variants={stagger}
         initial="hidden"
@@ -37,7 +38,7 @@ export default function Hero() {
           <motion.h1
             variants={fadeUp}
             className="text-[2.5rem] sm:text-5xl lg:text-[3.25rem] xl:text-[3.75rem]
-                       font-semibold leading-[1.08] tracking-tight text-foreground mb-6"
+                       font-semibold leading-[1.08] tracking-tight text-foreground mb-6 font-serif"
           >
             We Help Real Estate Agents Build a Brand That{' '}
             <span className="italic text-gold">Brings Clients to Them</span>
@@ -72,7 +73,7 @@ export default function Hero() {
 
       {/* ── Right: dark stats ── */}
       <motion.div
-        className="bg-foreground w-full lg:w-1/2 flex flex-col justify-center
+        className="w-full lg:flex-1 flex flex-col justify-center
                    py-20 lg:py-0 gap-10 lg:gap-14"
         style={{ paddingRight: outerPad, paddingLeft: innerPad }}
         variants={stagger}

@@ -8,9 +8,10 @@ const painPoints = [
     title: 'You know you need video',
     body: "But filming, editing, and posting consistently feels impossible on top of everything else you're managing.",
     icon: (
+      // Video camera
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-        <rect width="20" height="20" rx="4" fill="#3B82F6" />
-        <polygon points="7,5 16,10 7,15" fill="white" />
+        <rect x="1" y="5" width="11" height="10" rx="1.5" stroke="#1a1a1a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M12 8l6-3v10l-6-3" stroke="#1a1a1a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
   },
@@ -18,8 +19,12 @@ const painPoints = [
     title: "You're blending into the feed",
     body: 'Your competitors are posting the same headshots. One well-produced brand film separates you before a single conversation.',
     icon: (
+      // Overlapping people / crowd
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-        <rect x="10" y="1" width="12.73" height="12.73" rx="1" transform="rotate(45 10 1)" stroke="#1a1a1a" strokeWidth="1.5" />
+        <circle cx="7" cy="7" r="3" stroke="#1a1a1a" strokeWidth="1.5" />
+        <path d="M1 17c0-3.314 2.686-5 6-5s6 1.686 6 5" stroke="#1a1a1a" strokeWidth="1.5" strokeLinecap="round" />
+        <circle cx="14" cy="6" r="2.5" stroke="#1a1a1a" strokeWidth="1.5" />
+        <path d="M17 16c0-2.5-1.5-4-3.5-4.5" stroke="#1a1a1a" strokeWidth="1.5" strokeLinecap="round" />
       </svg>
     ),
   },
@@ -27,10 +32,15 @@ const painPoints = [
     title: 'Leads go cold before they call',
     body: "Buyers and sellers research before they reach out. If they can't find you online, they'll find someone else.",
     icon: (
+      // Phone
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-        <circle cx="10" cy="10" r="8.5" stroke="#1a1a1a" strokeWidth="1.5" />
-        <circle cx="10" cy="10" r="4.5" stroke="#1a1a1a" strokeWidth="1.5" />
-        <circle cx="10" cy="10" r="1.5" fill="#1a1a1a" />
+        <path
+          d="M5.5 2h3l1.5 4-2 1.5a9 9 0 0 0 4.5 4.5L14 10l4 1.5v3A1.5 1.5 0 0 1 16.5 16C8.5 16 4 11.5 4 3.5A1.5 1.5 0 0 1 5.5 2z"
+          stroke="#1a1a1a"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
       </svg>
     ),
   },
@@ -38,8 +48,16 @@ const painPoints = [
     title: 'Your listings deserve better',
     body: 'Professional listing video drives more showings, faster closes, and higher perceived value — it pays for itself.',
     icon: (
+      // House
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-        <rect x="10" y="1" width="12.73" height="12.73" rx="1" transform="rotate(45 10 1)" stroke="#1a1a1a" strokeWidth="1.5" />
+        <path
+          d="M3 9.5L10 3l7 6.5V17a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"
+          stroke="#1a1a1a"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path d="M7 18v-6h6v6" stroke="#1a1a1a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
   },
@@ -57,15 +75,15 @@ export default function BuiltForYou() {
     >
       <div className="max-w-6xl w-full">
         <motion.div variants={fadeUp} className="flex items-center gap-3 mb-6">
-          <span className="w-8 h-px bg-[#C9A96E]" />
-          <p className="text-xs uppercase tracking-widest text-[#C9A96E] font-medium">
+          <span className="w-8 h-px bg-gold" />
+          <p className="text-xs uppercase tracking-widest text-gold font-medium">
             Built for You
           </p>
         </motion.div>
 
         <motion.h2
           variants={fadeUp}
-          className="text-4xl md:text-5xl font-bold text-foreground mb-16 max-w-xl leading-tight"
+          className="text-4xl md:text-5xl font-bold text-foreground mb-16 max-w-xl leading-tight font-serif"
         >
           Most agents are invisible online. We fix that.
         </motion.h2>
@@ -89,7 +107,7 @@ export default function BuiltForYou() {
                 <h3 className="text-sm font-bold text-foreground mb-3">
                   {point.title}
                 </h3>
-                <p className="text-sm text-muted leading-relaxed">{point.body}</p>
+                <p className="text-sm text-gold leading-relaxed">{point.body}</p>
               </div>
             </motion.div>
           ))}

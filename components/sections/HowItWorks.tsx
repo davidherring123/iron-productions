@@ -38,15 +38,15 @@ export default function HowItWorks() {
     >
       <div className="max-w-6xl w-full">
         <motion.div variants={fadeUp} className="flex items-center gap-3 mb-6">
-          <span className="w-8 h-px bg-[#C9A96E]" />
-          <p className="text-xs uppercase tracking-widest text-[#C9A96E] font-medium">
+          <span className="w-8 h-px bg-gold" />
+          <p className="text-xs uppercase tracking-widest text-gold font-medium">
             How It Works
           </p>
         </motion.div>
 
         <motion.h2
           variants={fadeUp}
-          className="text-4xl md:text-5xl font-bold text-background mb-16 max-w-xl leading-tight"
+          className="text-4xl md:text-5xl font-bold text-background mb-16 max-w-xl leading-tight font-serif"
         >
           From consultation to content in days
         </motion.h2>

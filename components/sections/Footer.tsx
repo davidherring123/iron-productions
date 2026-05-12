@@ -10,12 +10,6 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col md:items-end gap-1.5">
-          <a
-            href="mailto:kameronamullins@gmail.com"
-            className="text-sm text-white/60 hover:text-background transition-colors"
-          >
-            kameronamullins@gmail.com
-          </a>
           <p className="text-xs text-white/25">
             © {new Date().getFullYear()} Iron Productions. All rights reserved.
           </p>

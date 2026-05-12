@@ -22,15 +22,15 @@ export default function Contact() {
     >
       <div className="max-w-2xl w-full">
         <motion.div variants={fadeUp} className="flex items-center gap-3 mb-6">
-          <span className="w-8 h-px bg-[#C9A96E]" />
-          <p className="text-xs uppercase tracking-widest text-[#C9A96E] font-medium">
+          <span className="w-8 h-px bg-gold" />
+          <p className="text-xs uppercase tracking-widest text-gold font-medium">
             Get in Touch
           </p>
         </motion.div>
 
         <motion.h2
           variants={fadeUp}
-          className="text-3xl md:text-4xl font-bold text-foreground mb-3"
+          className="text-3xl md:text-4xl font-bold text-foreground mb-3 font-serif"
         >
           Ready to start?
         </motion.h2>

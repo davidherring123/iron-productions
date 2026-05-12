@@ -5,9 +5,10 @@
   --color-foreground: #0D0D0D;
   --color-muted: #78706A;
   --color-divider: #D5CFC6;
-  --color-gold: #BF9A30;
+  --color-gold: #C9A96E;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-playfair);
 }
 
 html {

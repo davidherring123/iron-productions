@@ -66,15 +66,15 @@ export default function Pricing() {
     >
       <div className="max-w-5xl w-full">
         <motion.div variants={fadeUp} className="flex items-center gap-3 mb-6">
-          <span className="w-8 h-px bg-[#C9A96E]" />
-          <p className="text-xs uppercase tracking-widest text-[#C9A96E] font-medium">
+          <span className="w-8 h-px bg-gold" />
+          <p className="text-xs uppercase tracking-widest text-gold font-medium">
             Pricing
           </p>
         </motion.div>
 
         <motion.h2
           variants={fadeUp}
-          className="text-4xl md:text-5xl font-bold text-foreground mb-14 leading-tight max-w-sm"
+          className="text-4xl md:text-5xl font-bold text-foreground mb-14 leading-tight max-w-sm font-serif"
         >
           Simple packages. No surprises.
         </motion.h2>
@@ -94,7 +94,7 @@ export default function Pricing() {
               }`}
             >
               {tier.popular && (
-                <span className="inline-block self-start bg-[#C9A96E] text-foreground text-[10px] uppercase tracking-widest font-semibold px-3 py-1 mb-6">
+                <span className="inline-block self-start bg-gold text-foreground text-[10px] uppercase tracking-widest font-semibold px-3 py-1 mb-6">
                   Most Popular
                 </span>
               )}
@@ -109,7 +109,7 @@ export default function Pricing() {
 
               <p
                 className={`text-xs leading-relaxed mb-6 ${
-                  tier.popular ? 'text-[#C9A96E]' : 'text-[#C9A96E]'
+                  tier.popular ? 'text-gold' : 'text-gold'
                 }`}
               >
                 {tier.subtitle}
@@ -124,7 +124,7 @@ export default function Pricing() {
               </p>
               <p
                 className={`text-[10px] uppercase tracking-widest mb-6 ${
-                  tier.popular ? 'text-[#C9A96E]' : 'text-[#C9A96E]'
+                  tier.popular ? 'text-gold' : 'text-gold'
                 }`}
               >
                 {tier.period}
@@ -144,7 +144,7 @@ export default function Pricing() {
                       tier.popular ? 'text-white/70' : 'text-muted'
                     }`}
                   >
-                    <span className="shrink-0 text-[#C9A96E] mt-px">—</span>
+                    <span className="shrink-0 text-gold mt-px">—</span>
                     {f}
                   </li>
                 ))}
@@ -160,7 +160,7 @@ export default function Pricing() {
                 href="#contact"
                 className={`text-[11px] font-semibold uppercase tracking-widest text-center py-4 mt-auto transition-opacity hover:opacity-80 ${
                   tier.popular
-                    ? 'bg-[#C9A96E] text-foreground'
+                    ? 'bg-gold text-foreground'
                     : 'bg-foreground text-background'
                 }`}
               >

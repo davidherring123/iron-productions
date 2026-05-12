@@ -13,10 +13,8 @@ import Footer from '@/components/sections/Footer';
 export default function Page() {
   return (
     <>
-      <div id="hero" className="h-screen flex flex-col">
-        <Header />
-        <Hero />
-      </div>
+      <Header />
+      <Hero />
       <main>
         <OurWork />
         <BuiltForYou />

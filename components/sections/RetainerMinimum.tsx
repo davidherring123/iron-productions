@@ -25,7 +25,7 @@ export default function RetainerMinimum() {
         <div className="text-center md:text-left">
           <motion.h3
             variants={fadeUp}
-            className="text-2xl md:text-3xl font-bold text-foreground mb-5 leading-snug"
+            className="text-2xl md:text-3xl font-bold text-foreground mb-5 leading-snug font-serif"
           >
             Why we require a 3-month minimum on retainers
           </motion.h3>
