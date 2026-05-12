@@ -7,7 +7,7 @@ export default function OurWork() {
   return (
     <motion.section
       id="our-work"
-      className="min-h-screen flex flex-col items-center justify-center bg-background px-6 py-24"
+      className="min-h-screen flex flex-col items-center justify-center bg-white px-6 py-24"
       variants={stagger}
       initial="hidden"
       whileInView="visible"
@@ -29,7 +29,7 @@ export default function OurWork() {
 
         <motion.div
           variants={fadeUp}
-          className="aspect-video bg-divider rounded-xl flex items-center justify-center w-full"
+          className="aspect-video bg-divider flex items-center justify-center w-full"
         >
           <span className="text-muted text-xs uppercase tracking-wider">
             Video

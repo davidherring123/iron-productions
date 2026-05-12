@@ -30,7 +30,7 @@ export default function HowItWorks() {
   return (
     <motion.section
       id="how-it-works"
-      className="min-h-screen flex flex-col items-center justify-center bg-foreground px-6 py-24"
+      className="min-h-screen flex flex-col items-center justify-center bg-white px-6 py-24"
       variants={stagger}
       initial="hidden"
       whileInView="visible"
@@ -39,13 +39,13 @@ export default function HowItWorks() {
       <div className="max-w-6xl w-full">
         <motion.p
           variants={fadeUp}
-          className="text-xs uppercase tracking-widest text-white/40 mb-4"
+          className="text-xs uppercase tracking-widest text-muted mb-4"
         >
           Process
         </motion.p>
         <motion.h2
           variants={fadeUp}
-          className="text-3xl md:text-5xl font-semibold text-background mb-16"
+          className="text-3xl md:text-5xl font-semibold text-foreground mb-16"
         >
           How It Works
         </motion.h2>
@@ -53,7 +53,7 @@ export default function HowItWorks() {
         {/* Mobile: stacked | Desktop: horizontal row */}
         <motion.div
           variants={stagger}
-          className="flex flex-col md:flex-row gap-12 md:gap-0 md:divide-x divide-white/10"
+          className="flex flex-col md:flex-row gap-12 md:gap-0 md:divide-x divide-foreground/10"
         >
           {steps.map((step) => (
             <motion.div
@@ -61,13 +61,13 @@ export default function HowItWorks() {
               variants={fadeUp}
               className="flex-1 md:px-10 first:pl-0 last:pr-0"
             >
-              <p className="text-5xl font-semibold text-white/15 mb-5">
+              <p className="text-5xl font-semibold text-foreground/10 mb-5">
                 {step.number}
               </p>
-              <h3 className="text-base font-semibold text-background mb-2">
+              <h3 className="text-base font-semibold text-foreground mb-2">
                 {step.title}
               </h3>
-              <p className="text-sm text-white/50 leading-relaxed">{step.body}</p>
+              <p className="text-sm text-muted leading-relaxed">{step.body}</p>
             </motion.div>
           ))}
         </motion.div>

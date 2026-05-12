@@ -10,6 +10,10 @@
   --font-mono: var(--font-geist-mono);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #ECE7DF;
   color: #0D0D0D;

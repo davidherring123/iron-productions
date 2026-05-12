@@ -50,7 +50,7 @@ export default function Pricing() {
   return (
     <motion.section
       id="pricing"
-      className="min-h-screen flex flex-col items-center justify-center bg-background px-6 py-24"
+      className="min-h-screen flex flex-col items-center justify-center bg-foreground px-6 py-24"
       variants={stagger}
       initial="hidden"
       whileInView="visible"
@@ -59,18 +59,17 @@ export default function Pricing() {
       <div className="max-w-6xl w-full">
         <motion.p
           variants={fadeUp}
-          className="text-xs uppercase tracking-widest text-muted mb-4"
+          className="text-xs uppercase tracking-widest text-white/40 mb-4"
         >
           Pricing
         </motion.p>
         <motion.h2
           variants={fadeUp}
-          className="text-3xl md:text-5xl font-semibold text-foreground mb-16"
+          className="text-3xl md:text-5xl font-semibold text-background mb-16"
         >
           Packages
         </motion.h2>
 
-        {/* Mobile: stacked | Desktop: 3 columns */}
         <motion.div
           variants={stagger}
           className="grid grid-cols-1 md:grid-cols-3 gap-6"
@@ -81,19 +80,19 @@ export default function Pricing() {
               variants={fadeUp}
               className={`relative rounded-2xl p-8 flex flex-col ${
                 tier.popular
-                  ? 'bg-foreground'
-                  : 'border border-divider'
+                  ? 'bg-background'
+                  : 'border border-white/10'
               }`}
             >
               {tier.popular && (
-                <span className="absolute top-6 right-6 text-xs uppercase tracking-widest bg-background text-foreground px-3 py-1 rounded-full">
+                <span className="absolute top-6 right-6 text-xs uppercase tracking-widest bg-foreground text-background px-3 py-1 ">
                   Most Popular
                 </span>
               )}
 
               <p
                 className={`text-sm font-medium mb-6 ${
-                  tier.popular ? 'text-white/60' : 'text-muted'
+                  tier.popular ? 'text-muted' : 'text-white/60'
                 }`}
               >
                 {tier.name}
@@ -101,14 +100,14 @@ export default function Pricing() {
 
               <p
                 className={`text-4xl font-semibold mb-1 ${
-                  tier.popular ? 'text-background' : 'text-foreground'
+                  tier.popular ? 'text-foreground' : 'text-background'
                 }`}
               >
                 {tier.price}
               </p>
               <p
                 className={`text-xs mb-8 ${
-                  tier.popular ? 'text-white/40' : 'text-muted'
+                  tier.popular ? 'text-muted' : 'text-white/40'
                 }`}
               >
                 {tier.period}
@@ -119,7 +118,7 @@ export default function Pricing() {
                   <li
                     key={f}
                     className={`text-sm flex items-start gap-2 ${
-                      tier.popular ? 'text-white/70' : 'text-muted'
+                      tier.popular ? 'text-muted' : 'text-white/70'
                     }`}
                   >
                     <span className="mt-px shrink-0">—</span>
@@ -130,10 +129,10 @@ export default function Pricing() {
 
               <a
                 href="#contact"
-                className={`text-sm font-medium text-center py-3.5 rounded-full transition-opacity hover:opacity-75 ${
+                className={`text-sm font-medium text-center py-3.5  transition-opacity hover:opacity-75 ${
                   tier.popular
-                    ? 'bg-background text-foreground'
-                    : 'bg-foreground text-background'
+                    ? 'bg-foreground text-background'
+                    : 'bg-background text-foreground'
                 }`}
               >
                 Book now

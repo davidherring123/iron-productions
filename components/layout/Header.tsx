@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
@@ -15,11 +16,18 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-background border-b border-divider">
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <span className="text-sm font-semibold tracking-widest uppercase text-foreground">
-          Iron Productions
-        </span>
+    <header className="sticky top-0 z-50 bg-white border-b border-divider px-6">
+      <div className="max-w-6xl mx-auto h-16 flex items-center justify-between">
+        <a href="#hero" aria-label="Iron Productions home">
+          <Image
+            src="/Logo.png"
+            alt="Iron Productions"
+            height={32}
+            width={160}
+            className="h-8 w-auto"
+            priority
+          />
+        </a>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8">
@@ -34,7 +42,7 @@ export default function Header() {
           ))}
           <a
             href="#contact"
-            className="text-sm bg-foreground text-background px-5 py-2 rounded-full hover:opacity-75 transition-opacity"
+            className="text-sm bg-foreground text-background px-5 py-2  hover:opacity-75 transition-opacity"
           >
             Book now
           </a>
@@ -72,9 +80,9 @@ export default function Header() {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25, ease: 'easeInOut' }}
-            className="md:hidden overflow-hidden border-t border-divider bg-background"
+            className="md:hidden overflow-hidden border-t border-divider bg-white"
           >
-            <nav className="flex flex-col px-6 py-5 gap-5">
+            <nav className="max-w-6xl mx-auto flex flex-col py-5 gap-5">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
@@ -88,7 +96,7 @@ export default function Header() {
               <a
                 href="#contact"
                 onClick={() => setOpen(false)}
-                className="text-sm bg-foreground text-background px-5 py-3 rounded-full text-center hover:opacity-75 transition-opacity"
+                className="text-sm bg-foreground text-background px-5 py-3  text-center hover:opacity-75 transition-opacity"
               >
                 Book now
               </a>

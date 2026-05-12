@@ -25,7 +25,7 @@ export default function Stats() {
   return (
     <motion.section
       id="stats"
-      className="min-h-screen flex items-center justify-center bg-foreground px-6"
+      className="flex items-center justify-center bg-foreground px-6 py-20"
       variants={stagger}
       initial="hidden"
       whileInView="visible"

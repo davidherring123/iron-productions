@@ -42,13 +42,13 @@ export default function Hero() {
         >
           <a
             href="#contact"
-            className="px-8 py-3.5 bg-foreground text-background text-sm font-medium rounded-full hover:opacity-75 transition-opacity"
+            className="px-8 py-3.5 bg-foreground text-background text-sm font-medium  hover:opacity-75 transition-opacity"
           >
             Book a Free Consultation
           </a>
           <a
             href="#pricing"
-            className="px-8 py-3.5 border border-foreground text-foreground text-sm font-medium rounded-full hover:bg-foreground hover:text-background transition-colors"
+            className="px-8 py-3.5 border border-foreground text-foreground text-sm font-medium  hover:bg-foreground hover:text-background transition-colors"
           >
             See Packages
           </a>
