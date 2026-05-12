@@ -16,35 +16,36 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-divider px-6">
-      <div className="max-w-6xl mx-auto h-16 flex items-center justify-between">
+    <header className="sticky top-0 z-50 bg-white border-b border-divider">
+      {/* Equal padding on top/sides; content goes edge-to-edge within that. */}
+      <div className="px-8 py-5 flex items-center justify-between">
         <a href="#hero" aria-label="Iron Productions home">
           <Image
             src="/Logo.png"
             alt="Iron Productions"
-            height={32}
-            width={160}
-            className="h-8 w-auto"
+            height={36}
+            width={180}
+            className="h-9 w-auto"
             priority
           />
         </a>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-muted hover:text-foreground transition-colors"
+              className="text-base text-muted hover:text-foreground transition-colors"
             >
               {link.label}
             </a>
           ))}
           <a
             href="#contact"
-            className="text-sm bg-foreground text-background px-5 py-2  hover:opacity-75 transition-opacity"
+            className="text-base bg-foreground text-background px-6 py-3 font-medium hover:opacity-75 transition-opacity"
           >
-            Book now
+            BOOK A CALL
           </a>
         </nav>
 
@@ -54,21 +55,9 @@ export default function Header() {
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
-          <span
-            className={`block w-6 h-px bg-foreground transition-transform duration-300 ${
-              open ? 'rotate-45 translate-y-[7px]' : ''
-            }`}
-          />
-          <span
-            className={`block w-6 h-px bg-foreground transition-opacity duration-300 ${
-              open ? 'opacity-0' : ''
-            }`}
-          />
-          <span
-            className={`block w-6 h-px bg-foreground transition-transform duration-300 ${
-              open ? '-rotate-45 -translate-y-[7px]' : ''
-            }`}
-          />
+          <span className={`block w-6 h-px bg-foreground transition-transform duration-300 ${open ? 'rotate-45 translate-y-[7px]' : ''}`} />
+          <span className={`block w-6 h-px bg-foreground transition-opacity duration-300 ${open ? 'opacity-0' : ''}`} />
+          <span className={`block w-6 h-px bg-foreground transition-transform duration-300 ${open ? '-rotate-45 -translate-y-[7px]' : ''}`} />
         </button>
       </div>
 
@@ -82,13 +71,13 @@ export default function Header() {
             transition={{ duration: 0.25, ease: 'easeInOut' }}
             className="md:hidden overflow-hidden border-t border-divider bg-white"
           >
-            <nav className="max-w-6xl mx-auto flex flex-col py-5 gap-5">
+            <nav className="px-8 py-6 flex flex-col gap-5">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="text-sm text-muted hover:text-foreground transition-colors"
+                  className="text-base text-muted hover:text-foreground transition-colors"
                 >
                   {link.label}
                 </a>
@@ -96,9 +85,9 @@ export default function Header() {
               <a
                 href="#contact"
                 onClick={() => setOpen(false)}
-                className="text-sm bg-foreground text-background px-5 py-3  text-center hover:opacity-75 transition-opacity"
+                className="text-base bg-foreground text-background px-6 py-3 text-center font-medium hover:opacity-75 transition-opacity"
               >
-                Book now
+                BOOK A CALL
               </a>
             </nav>
           </motion.div>

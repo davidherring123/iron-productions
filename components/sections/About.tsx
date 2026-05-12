@@ -8,7 +8,7 @@ export default function About() {
   return (
     <motion.section
       id="about"
-      className="min-h-screen flex flex-col items-center justify-center bg-background px-6 py-24"
+      className="min-h-screen flex flex-col items-center justify-center bg-white px-6 py-24"
       variants={stagger}
       initial="hidden"
       whileInView="visible"

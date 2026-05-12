@@ -7,34 +7,36 @@ const packages = [
   'Listing Video',
   'Agent Brand Retainer',
   'Agent Brand Film',
-  "Not sure yet",
+  'Not sure yet',
 ];
 
 export default function Contact() {
   return (
     <motion.section
       id="contact"
-      className="min-h-screen flex flex-col items-center justify-center bg-foreground px-6 py-24"
+      className="bg-background px-6 py-24 flex justify-center"
       variants={stagger}
       initial="hidden"
       whileInView="visible"
       viewport={defaultViewport}
     >
-      <div className="max-w-xl w-full">
-        <motion.p
-          variants={fadeUp}
-          className="text-xs uppercase tracking-widest text-white/40 mb-4"
-        >
-          Get Started
-        </motion.p>
+      <div className="max-w-2xl w-full">
+        <motion.div variants={fadeUp} className="flex items-center gap-3 mb-6">
+          <span className="w-8 h-px bg-[#C9A96E]" />
+          <p className="text-xs uppercase tracking-widest text-[#C9A96E] font-medium">
+            Get in Touch
+          </p>
+        </motion.div>
+
         <motion.h2
           variants={fadeUp}
-          className="text-3xl md:text-5xl font-semibold text-background mb-4"
+          className="text-3xl md:text-4xl font-bold text-foreground mb-3"
         >
-          Book a Free Consultation
+          Ready to start?
         </motion.h2>
-        <motion.p variants={fadeUp} className="text-white/50 mb-12">
-          Tell us about your goals and we'll put together a plan that fits.
+        <motion.p variants={fadeUp} className="text-sm text-muted mb-10 leading-relaxed">
+          Tell us about yourself and what you&apos;re looking for. We&apos;ll get back to you
+          within 48 hours.
         </motion.p>
 
         <motion.form
@@ -42,40 +44,37 @@ export default function Contact() {
           className="flex flex-col gap-6"
           onSubmit={(e) => e.preventDefault()}
         >
-          <motion.div
-            variants={fadeUp}
-            className="flex flex-col sm:flex-row gap-6"
-          >
+          <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-6">
             <div className="flex-1 flex flex-col gap-2">
-              <label className="text-xs uppercase tracking-wider text-white/40">
+              <label className="text-xs uppercase tracking-widest text-muted">
                 Name
               </label>
               <input
                 type="text"
-                placeholder="Your name"
-                className="border border-white/10 px-4 py-3 text-sm text-background placeholder:text-white/30 focus:outline-none focus:border-white/40 transition-colors bg-transparent"
+                placeholder="Jane Smith"
+                className="border border-divider px-4 py-3 text-sm text-foreground placeholder:text-muted/50 focus:outline-none focus:border-foreground/40 transition-colors bg-transparent"
               />
             </div>
             <div className="flex-1 flex flex-col gap-2">
-              <label className="text-xs uppercase tracking-wider text-white/40">
+              <label className="text-xs uppercase tracking-widest text-muted">
                 Email
               </label>
               <input
                 type="email"
-                placeholder="you@example.com"
-                className="border border-white/10 px-4 py-3 text-sm text-background placeholder:text-white/30 focus:outline-none focus:border-white/40 transition-colors bg-transparent"
+                placeholder="jane@brokerage.com"
+                className="border border-divider px-4 py-3 text-sm text-foreground placeholder:text-muted/50 focus:outline-none focus:border-foreground/40 transition-colors bg-transparent"
               />
             </div>
           </motion.div>
 
           <motion.div variants={fadeUp} className="flex flex-col gap-2">
-            <label className="text-xs uppercase tracking-wider text-white/40">
+            <label className="text-xs uppercase tracking-widest text-muted">
               Package
             </label>
-            <select className="border border-white/10 px-4 py-3 text-sm text-background focus:outline-none focus:border-white/40 transition-colors bg-transparent appearance-none cursor-pointer">
-              <option value="" className="bg-foreground">Select a package</option>
+            <select className="border border-divider px-4 py-3 text-sm text-foreground focus:outline-none focus:border-foreground/40 transition-colors bg-background appearance-none cursor-pointer">
+              <option value="">Select a package...</option>
               {packages.map((p) => (
-                <option key={p} value={p} className="bg-foreground">
+                <option key={p} value={p}>
                   {p}
                 </option>
               ))}
@@ -83,20 +82,20 @@ export default function Contact() {
           </motion.div>
 
           <motion.div variants={fadeUp} className="flex flex-col gap-2">
-            <label className="text-xs uppercase tracking-wider text-white/40">
+            <label className="text-xs uppercase tracking-widest text-muted">
               Your Goals
             </label>
             <textarea
-              rows={4}
-              placeholder="What are you hoping to achieve?"
-              className="border border-white/10 px-4 py-3 text-sm text-background placeholder:text-white/30 focus:outline-none focus:border-white/40 transition-colors bg-transparent resize-none"
+              rows={5}
+              placeholder="What are you trying to accomplish?"
+              className="border border-divider px-4 py-3 text-sm text-foreground placeholder:text-muted/50 focus:outline-none focus:border-foreground/40 transition-colors bg-transparent resize-none"
             />
           </motion.div>
 
           <motion.button
             variants={fadeUp}
             type="submit"
-            className="bg-background text-foreground text-sm font-medium py-4  hover:opacity-75 transition-opacity"
+            className="bg-foreground text-background text-xs font-semibold uppercase tracking-widest py-5 hover:opacity-80 transition-opacity"
           >
             Send Message
           </motion.button>

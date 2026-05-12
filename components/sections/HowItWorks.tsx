@@ -6,23 +6,23 @@ import { fadeUp, stagger, defaultViewport } from '@/lib/animations';
 const steps = [
   {
     number: '01',
-    title: 'Consultation',
-    body: 'We learn your brand, goals, and target market.',
+    title: 'Free Consultation',
+    body: 'We learn your goals, your market, and what kind of content fits your brand. No pressure, no obligation.',
   },
   {
     number: '02',
-    title: 'Strategy',
-    body: 'We build a content plan tailored to your listings and audience.',
+    title: 'Content Strategy',
+    body: 'We build a plan around your goals — what to film, how often, and what will actually move the needle.',
   },
   {
     number: '03',
-    title: 'Shoot',
-    body: 'Our crew handles everything on location — you just show up.',
+    title: 'We Shoot',
+    body: 'You show up. We handle everything on location — setup, direction, and getting the shots we need.',
   },
   {
     number: '04',
-    title: 'Delivery',
-    body: 'Edited, branded, and ready to post within 48 hours.',
+    title: 'Content Delivered',
+    body: 'Edited, optimized, and ready to post. Delivered to your inbox. You approve and share — that\'s it.',
   },
 ];
 
@@ -30,44 +30,44 @@ export default function HowItWorks() {
   return (
     <motion.section
       id="how-it-works"
-      className="min-h-screen flex flex-col items-center justify-center bg-white px-6 py-24"
+      className="flex flex-col items-center justify-center bg-foreground px-6 py-24"
       variants={stagger}
       initial="hidden"
       whileInView="visible"
       viewport={defaultViewport}
     >
       <div className="max-w-6xl w-full">
-        <motion.p
-          variants={fadeUp}
-          className="text-xs uppercase tracking-widest text-muted mb-4"
-        >
-          Process
-        </motion.p>
+        <motion.div variants={fadeUp} className="flex items-center gap-3 mb-6">
+          <span className="w-8 h-px bg-[#C9A96E]" />
+          <p className="text-xs uppercase tracking-widest text-[#C9A96E] font-medium">
+            How It Works
+          </p>
+        </motion.div>
+
         <motion.h2
           variants={fadeUp}
-          className="text-3xl md:text-5xl font-semibold text-foreground mb-16"
+          className="text-4xl md:text-5xl font-bold text-background mb-16 max-w-xl leading-tight"
         >
-          How It Works
+          From consultation to content in days
         </motion.h2>
 
-        {/* Mobile: stacked | Desktop: horizontal row */}
         <motion.div
           variants={stagger}
-          className="flex flex-col md:flex-row gap-12 md:gap-0 md:divide-x divide-foreground/10"
+          className="grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/10"
         >
           {steps.map((step) => (
             <motion.div
               key={step.number}
               variants={fadeUp}
-              className="flex-1 md:px-10 first:pl-0 last:pr-0"
+              className="md:px-10 first:pl-0 last:pr-0 pt-10 md:pt-0"
             >
-              <p className="text-5xl font-semibold text-foreground/10 mb-5">
+              <p className="text-5xl font-bold text-white/20 mb-8 leading-none">
                 {step.number}
               </p>
-              <h3 className="text-base font-semibold text-foreground mb-2">
+              <h3 className="text-sm font-bold text-background mb-3">
                 {step.title}
               </h3>
-              <p className="text-sm text-muted leading-relaxed">{step.body}</p>
+              <p className="text-sm text-white/50 leading-relaxed">{step.body}</p>
             </motion.div>
           ))}
         </motion.div>

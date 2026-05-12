@@ -3,57 +3,96 @@
 import { motion } from 'framer-motion';
 import { fadeUp, stagger } from '@/lib/animations';
 
+const stats = [
+  { value: '73%', label: 'Of sellers prefer agents who use video', source: 'NAR' },
+  { value: '403%', label: 'More inquiries for listings with video', source: 'DigitalSherpa' },
+  { value: '9%', label: 'Of agents currently create listing videos', source: 'NAR' },
+];
+
+// Outer padding mirrors max-w-6xl (72rem) auto-margins so content edges
+// align with every other section on the page.
+const outerPad = 'max(1.5rem, calc(50vw - 36rem))';
+const innerPad = 'clamp(2rem, 4vw, 4rem)';
+
 export default function Hero() {
   return (
-    <motion.section
-      id="hero"
-      className="min-h-screen flex items-center justify-center bg-background px-6"
-      variants={stagger}
-      initial="hidden"
-      animate="visible"
-    >
-      {/* Mobile: centered | Desktop: left-aligned */}
-      <div className="max-w-4xl w-full text-center md:text-left">
-        <motion.p
-          variants={fadeUp}
-          className="text-xs uppercase tracking-widest text-gold mb-6"
-        >
-          Charlotte, NC — Real Estate Video
-        </motion.p>
-
-        <motion.h1
-          variants={fadeUp}
-          className="text-4xl md:text-6xl lg:text-7xl font-semibold leading-tight tracking-tight text-foreground mb-6"
-        >
-          We Help Real Estate Agents Build a Brand That{' '}
-          <span className="italic text-gold">Brings Clients to Them</span>
-        </motion.h1>
-
-        <motion.p
-          variants={fadeUp}
-          className="text-lg md:text-xl text-muted max-w-xl mx-auto md:mx-0 mb-10"
-        >
-          Done-for-you listing videos, social content, and brand films.
-        </motion.p>
-
-        <motion.div
-          variants={fadeUp}
-          className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
-        >
-          <a
-            href="#contact"
-            className="px-8 py-3.5 bg-foreground text-background text-sm font-medium  hover:opacity-75 transition-opacity"
+    <section className="flex-1 flex flex-col lg:flex-row min-h-0">
+      {/* ── Left: cream ── */}
+      <motion.div
+        className="bg-background w-full lg:w-1/2 flex items-center py-28 lg:py-0"
+        style={{ paddingLeft: outerPad, paddingRight: innerPad }}
+        variants={stagger}
+        initial="hidden"
+        animate="visible"
+      >
+        <div className="max-w-lg w-full">
+          <motion.p
+            variants={fadeUp}
+            className="flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-gold mb-8"
           >
-            Book a Free Consultation
-          </a>
-          <a
-            href="#pricing"
-            className="px-8 py-3.5 border border-foreground text-foreground text-sm font-medium  hover:bg-foreground hover:text-background transition-colors"
+            <span className="block w-8 h-px bg-gold flex-shrink-0" aria-hidden="true" />
+            Charlotte, NC — Real Estate Video
+          </motion.p>
+
+          <motion.h1
+            variants={fadeUp}
+            className="text-[2.5rem] sm:text-5xl lg:text-[3.25rem] xl:text-[3.75rem]
+                       font-semibold leading-[1.08] tracking-tight text-foreground mb-6"
           >
-            See Packages
-          </a>
-        </motion.div>
-      </div>
-    </motion.section>
+            We Help Real Estate Agents Build a Brand That{' '}
+            <span className="italic text-gold">Brings Clients to Them</span>
+          </motion.h1>
+
+          <motion.p
+            variants={fadeUp}
+            className="text-sm text-muted max-w-sm mb-10 leading-relaxed"
+          >
+            Done-for-you listing videos, social content, and brand films — built for
+            real estate agents who are serious about growing.
+          </motion.p>
+
+          <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-5">
+            <a
+              href="#contact"
+              className="px-7 py-3.5 bg-foreground text-background text-[11px] uppercase
+                         tracking-widest font-medium hover:opacity-75 transition-opacity"
+            >
+              Book a Free Consultation
+            </a>
+            <a
+              href="#pricing"
+              className="text-sm text-foreground hover:text-gold transition-colors
+                         inline-flex items-center gap-1.5"
+            >
+              See packages ↓
+            </a>
+          </motion.div>
+        </div>
+      </motion.div>
+
+      {/* ── Right: dark stats ── */}
+      <motion.div
+        className="bg-foreground w-full lg:w-1/2 flex flex-col justify-center
+                   py-20 lg:py-0 gap-10 lg:gap-14"
+        style={{ paddingRight: outerPad, paddingLeft: innerPad }}
+        variants={stagger}
+        initial="hidden"
+        animate="visible"
+      >
+        {stats.map((stat) => (
+          <motion.div key={stat.value} variants={fadeUp} className="border-l-2 border-gold pl-6">
+            <p className="text-5xl lg:text-[3.25rem] xl:text-6xl font-semibold text-gold leading-none">
+              {stat.value}
+            </p>
+            <p className="text-[13px] leading-relaxed text-white/60 mt-3">
+              {stat.label}
+              {stat.source && (
+                <span className="text-white/30"> — {stat.source}</span>
+              )}
+            </p>
+          </motion.div>
+        ))}
+      </motion.div>
+    </section>
   );
 }
