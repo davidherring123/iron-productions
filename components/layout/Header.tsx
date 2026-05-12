@@ -3,22 +3,23 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-
+import { headerSlideIn } from '@/lib/animations';
+import { COMPANY, LAYOUT } from '@/lib/constants';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > LAYOUT.scrollThreshold);
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   return (
     <motion.header
-      initial={{ y: -80, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      variants={headerSlideIn}
+      initial="hidden"
+      animate="visible"
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${
         scrolled
           ? 'bg-background border-b border-divider'
@@ -26,12 +27,12 @@ export default function Header() {
       }`}
     >
       <div className="px-8 py-5 flex items-center justify-between">
-        <a href="#hero" aria-label="Iron Productions home">
+        <a href="#hero" aria-label={`${COMPANY.name} home`}>
           <Image
             src="/Logo.png"
-            alt="Iron Productions"
-            height={36}
-            width={180}
+            alt={COMPANY.name}
+            width={LAYOUT.headerLogoWidth}
+            height={LAYOUT.headerLogoHeight}
             className="h-9 w-auto"
             priority
           />
@@ -48,7 +49,6 @@ export default function Header() {
           BOOK A CALL
         </a>
       </div>
-
     </motion.header>
   );
 }

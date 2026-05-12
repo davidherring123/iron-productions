@@ -7,7 +7,7 @@ export default function RetainerMinimum() {
   return (
     <motion.section
       id="retainer-minimum"
-      className="bg-white px-6 py-20 flex justify-center"
+      className="bg-white px-6 py-24 flex justify-center"
       variants={stagger}
       initial="hidden"
       whileInView="visible"
@@ -17,18 +17,19 @@ export default function RetainerMinimum() {
         <motion.div
           variants={fadeUp}
           className="shrink-0 leading-none select-none"
+          aria-hidden="true"
         >
           <span className="text-[9rem] md:text-[11rem] font-bold text-foreground/10 leading-none">
             3
           </span>
         </motion.div>
         <div className="text-center md:text-left">
-          <motion.h3
+          <motion.h2
             variants={fadeUp}
             className="text-2xl md:text-3xl font-bold text-foreground mb-5 leading-snug font-serif"
           >
             Why we require a 3-month minimum on retainers
-          </motion.h3>
+          </motion.h2>
           <motion.p variants={fadeUp} className="text-base text-muted leading-relaxed">
             Real estate is a relationship business. New clients don&apos;t come in week
             two — they come after they&apos;ve seen you consistently, trusted your face,

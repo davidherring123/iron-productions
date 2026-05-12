@@ -3,6 +3,9 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { fadeUp, stagger, defaultViewport } from '@/lib/animations';
+import { COMPANY } from '@/lib/constants';
+import SectionEyebrow from '@/components/ui/SectionEyebrow';
+import Button from '@/components/ui/Button';
 
 export default function About() {
   return (
@@ -15,44 +18,37 @@ export default function About() {
       viewport={defaultViewport}
     >
       <div className="max-w-6xl w-full flex flex-col md:flex-row items-center gap-16">
-        {/* Photo — Mobile: full width | Desktop: left half */}
         <motion.div
           variants={fadeUp}
           className="relative w-full md:w-1/2 aspect-[3/4] overflow-hidden"
         >
           <Image
             src="/kameron_mullins.jpg"
-            alt="Kameron Mullins, founder of Iron Productions"
+            alt={`${COMPANY.founder}, founder of ${COMPANY.name}`}
             fill
             className="object-cover"
             priority
           />
         </motion.div>
 
-        {/* Bio — Mobile: below photo | Desktop: right half */}
         <motion.div variants={fadeUp} className="w-full md:w-1/2 flex flex-col gap-6">
-          <motion.div variants={fadeUp} className="flex items-center gap-3">
-            <span className="block w-8 h-px bg-gold" />
-            <span className="text-xs uppercase tracking-widest text-gold">
-              Who You&rsquo;re Working With
-            </span>
-          </motion.div>
+          <SectionEyebrow label="Who You're Working With" />
           <motion.h2
             variants={fadeUp}
             className="text-4xl md:text-5xl font-bold text-foreground font-serif"
           >
-            Kameron Mullins
+            {COMPANY.founder}
           </motion.h2>
           <motion.p
             variants={fadeUp}
-            className="text-xs uppercase tracking-widest text-gold"
+            className="text-xs uppercase tracking-widest text-gold font-medium"
           >
-            Founder, Iron Productions Co.
+            Founder, {COMPANY.legalName}
           </motion.p>
           <motion.p variants={fadeUp} className="text-muted leading-relaxed">
-            I started Iron Productions Co. because I believe every business
+            I started {COMPANY.legalName} because I believe every business
             deserves content that actually looks like them — not generic stock
-            footage and templated edits. Iron Productions is built to grow —
+            footage and templated edits. {COMPANY.name} is built to grow —
             but right now, every client works directly with me. You get the
             founder&rsquo;s attention, not a junior hire. As we scale, that
             standard stays the same.
@@ -62,13 +58,15 @@ export default function About() {
             build your personal brand — with consistency, honesty, and work
             that speaks for itself.
           </motion.p>
-          <motion.a
-            variants={fadeUp}
+          <Button
             href="#contact"
-            className="inline-flex self-start mt-2 px-8 py-3.5 bg-foreground text-background text-xs font-semibold tracking-widest uppercase hover:opacity-75 transition-opacity"
+            variant="primary"
+            size="md"
+            variants={fadeUp}
+            className="self-start mt-2"
           >
             Let&rsquo;s Talk
-          </motion.a>
+          </Button>
         </motion.div>
       </div>
     </motion.section>

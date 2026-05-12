@@ -2,12 +2,13 @@
 
 import { motion } from 'framer-motion';
 import { fadeUp, stagger, defaultViewport } from '@/lib/animations';
+import Button from '@/components/ui/Button';
 
 export default function CTABanner() {
   return (
     <motion.section
       id="cta-banner"
-      className="bg-foreground px-6 py-28 flex justify-center"
+      className="bg-foreground px-6 py-24 flex justify-center"
       variants={stagger}
       initial="hidden"
       whileInView="visible"
@@ -27,13 +28,9 @@ export default function CTABanner() {
           for your market and your goals — no commitment required.
         </motion.p>
 
-        <motion.a
-          variants={fadeUp}
-          href="#contact"
-          className="bg-gold text-foreground text-xs font-semibold uppercase tracking-widest px-12 py-5 hover:opacity-90 transition-opacity"
-        >
+        <Button href="#contact" variant="accent" size="lg" variants={fadeUp}>
           Book Your Free Consultation
-        </motion.a>
+        </Button>
       </div>
     </motion.section>
   );

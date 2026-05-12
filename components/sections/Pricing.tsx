@@ -1,58 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { fadeUp, stagger, defaultViewport } from '@/lib/animations';
-
-const tiers = [
-  {
-    name: 'Listing Video',
-    subtitle: 'Make every property stand out from the moment it hits the market',
-    price: '$1,200',
-    period: 'Per Listing',
-    popular: false,
-    note: null,
-    cta: 'Book a Listing Shoot',
-    features: [
-      'Up to 3-hour shoot on location',
-      'Horizontal (16:9) cut for MLS & website',
-      'Vertical (9:16) cut for Instagram & TikTok',
-      'Professional edit with music & color grade',
-      'Delivered within 5 business days',
-    ],
-  },
-  {
-    name: 'Agent Brand Retainer',
-    subtitle: 'Show up every week without lifting a finger',
-    price: '$2,000',
-    period: 'Per Month — 3-Month Minimum',
-    popular: true,
-    note: '3-month minimum required. Real brand growth takes a runway, not a month.',
-    cta: 'Start Your Retainer',
-    features: [
-      '8 short-form videos per month',
-      '1 content shoot per month (up to 2 hours)',
-      'Edited for Instagram Reels & TikTok',
-      'Content strategy tailored to your market',
-      'You show up — we handle the rest',
-    ],
-  },
-  {
-    name: 'Agent Brand Film',
-    subtitle: 'The 60–90 second video that answers "why you" before the call',
-    price: '$2,500',
-    period: 'One-Time Investment',
-    popular: false,
-    note: null,
-    cta: 'Book a Brand Film',
-    features: [
-      'Half-day on-location shoot',
-      'Cinematic edit with music & color grade',
-      'Sound design included',
-      'One round of revisions',
-      'Delivered for web, email signature & social',
-    ],
-  },
-];
+import { fadeUp, stagger, tightViewport } from '@/lib/animations';
+import { PRICING_TIERS } from '@/lib/constants';
+import SectionEyebrow from '@/components/ui/SectionEyebrow';
+import Button from '@/components/ui/Button';
 
 export default function Pricing() {
   return (
@@ -62,15 +14,10 @@ export default function Pricing() {
       variants={stagger}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.1 }}
+      viewport={tightViewport}
     >
       <div className="max-w-5xl w-full">
-        <motion.div variants={fadeUp} className="flex items-center gap-3 mb-6">
-          <span className="w-8 h-px bg-gold" />
-          <p className="text-xs uppercase tracking-widest text-gold font-medium">
-            Pricing
-          </p>
-        </motion.div>
+        <SectionEyebrow label="Pricing" className="mb-6" />
 
         <motion.h2
           variants={fadeUp}
@@ -83,91 +30,76 @@ export default function Pricing() {
           variants={stagger}
           className="grid grid-cols-1 md:grid-cols-3 items-stretch"
         >
-          {tiers.map((tier) => (
-            <motion.div
-              key={tier.name}
-              variants={fadeUp}
-              className={`relative flex flex-col p-8 ${
-                tier.popular
-                  ? 'bg-foreground'
-                  : 'border border-divider bg-white'
-              }`}
-            >
-              {tier.popular && (
-                <span className="inline-block self-start bg-gold text-foreground text-[10px] uppercase tracking-widest font-semibold px-3 py-1 mb-6">
-                  Most Popular
-                </span>
-              )}
+          {PRICING_TIERS.map((tier) => {
+            const cardClasses = tier.popular
+              ? 'bg-foreground'
+              : 'border border-divider bg-white';
+            const titleColor = tier.popular ? 'text-background' : 'text-foreground';
+            const dividerColor = tier.popular ? 'bg-white/10' : 'bg-divider';
+            const featureBorderColor = tier.popular ? 'border-white/10' : 'border-divider';
+            const featureTextColor = tier.popular ? 'text-white/70' : 'text-muted';
 
-              <h3
-                className={`text-lg font-bold mb-2 ${
-                  tier.popular ? 'text-background' : 'text-foreground'
-                }`}
+            return (
+              <motion.div
+                key={tier.name}
+                variants={fadeUp}
+                className={`relative flex flex-col p-8 ${cardClasses}`}
               >
-                {tier.name}
-              </h3>
+                {tier.popular && (
+                  <span className="inline-block self-start bg-gold text-foreground text-xs uppercase tracking-widest font-semibold px-3 py-1 mb-6">
+                    Most Popular
+                  </span>
+                )}
 
-              <p
-                className={`text-sm leading-relaxed mb-6 ${
-                  tier.popular ? 'text-gold' : 'text-gold'
-                }`}
-              >
-                {tier.subtitle}
-              </p>
+                <h3 className={`text-lg font-bold mb-2 ${titleColor}`}>
+                  {tier.name}
+                </h3>
 
-              <p
-                className={`text-4xl font-bold mb-1 ${
-                  tier.popular ? 'text-background' : 'text-foreground'
-                }`}
-              >
-                {tier.price}
-              </p>
-              <p
-                className={`text-[10px] uppercase tracking-widest mb-6 ${
-                  tier.popular ? 'text-gold' : 'text-gold'
-                }`}
-              >
-                {tier.period}
-              </p>
-
-              <div
-                className={`w-full h-px mb-6 ${
-                  tier.popular ? 'bg-white/10' : 'bg-divider'
-                }`}
-              />
-
-              <ul className="flex flex-col flex-1 mb-6">
-                {tier.features.map((f, i) => (
-                  <li
-                    key={f}
-                    className={`text-sm flex items-start gap-2 leading-relaxed py-3 ${
-                      i > 0 ? (tier.popular ? 'border-t border-white/10' : 'border-t border-divider') : ''
-                    } ${tier.popular ? 'text-white/70' : 'text-muted'}`}
-                  >
-                    <span className="shrink-0 text-gold mt-px">—</span>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-
-              {tier.note && (
-                <p className="text-[11px] italic text-white/30 mb-6 leading-relaxed">
-                  {tier.note}
+                <p className="text-sm leading-relaxed mb-6 text-gold">
+                  {tier.subtitle}
                 </p>
-              )}
 
-              <a
-                href="#contact"
-                className={`text-[11px] font-semibold uppercase tracking-widest text-center py-4 mt-auto transition-opacity hover:opacity-80 ${
-                  tier.popular
-                    ? 'bg-gold text-foreground'
-                    : 'bg-foreground text-background'
-                }`}
-              >
-                {tier.cta}
-              </a>
-            </motion.div>
-          ))}
+                <p className={`text-4xl font-bold mb-1 ${titleColor}`}>
+                  {tier.price}
+                </p>
+                <p className="text-xs uppercase tracking-widest mb-6 text-gold">
+                  {tier.period}
+                </p>
+
+                <div className={`w-full h-px mb-6 ${dividerColor}`} />
+
+                <ul className="flex flex-col flex-1 mb-6">
+                  {tier.features.map((feature, i) => (
+                    <li
+                      key={feature}
+                      className={`text-sm flex items-start gap-2 leading-relaxed py-3 ${
+                        i > 0 ? `border-t ${featureBorderColor}` : ''
+                      } ${featureTextColor}`}
+                    >
+                      <span className="shrink-0 text-gold mt-px">—</span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+
+                {tier.note && (
+                  <p className="text-xs italic text-white/30 mb-6 leading-relaxed">
+                    {tier.note}
+                  </p>
+                )}
+
+                <Button
+                  href="#contact"
+                  variant={tier.popular ? 'accent' : 'primary'}
+                  size="md"
+                  fullWidth
+                  className="mt-auto"
+                >
+                  {tier.cta}
+                </Button>
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
     </motion.section>

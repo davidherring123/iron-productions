@@ -15,7 +15,9 @@
       "Bash(npm run *)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000)",
       "Bash(Select-String -Pattern \"icon|lucide|hero\")",
-      "Bash(Remove-Item *)"
+      "Bash(Remove-Item *)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\david\\\\Documents\\\\Projects\\\\iron-productions\" -Recurse -Force)",
+      "Bash(Select-Object FullName)"
     ]
   }
 }

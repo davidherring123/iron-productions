@@ -31,13 +31,13 @@ This is a **Next.js 16 App Router** project using TypeScript, Tailwind CSS v4, a
 
 ## Section Background Rotation
 
-All sections (including Header and Footer) rotate through **White → Cream → Dark** in order. The Hero is a special split section (cream left / dark right) but counts as **Cream** in the rotation.
+All sections rotate through **Cream → Dark → White** in order. The Hero is a special split section (cream left / dark right) but counts as **Cream** in the rotation. The Header (fixed nav) starts transparent and fades to Cream on scroll.
 
 Current sequence:
 
 | #  | Section          | Background                         | Token          |
 |----|------------------|------------------------------------|----------------|
-| 1  | Header           | White                              | `bg-white`     |
+| 1  | Header           | Cream (on scroll, transparent atop)| `bg-background`|
 | 2  | Hero             | Cream (split w/ Dark)              | `bg-background`|
 | 3  | OurWork          | Dark                               | `bg-foreground`|
 | 4  | BuiltForYou      | White                              | `bg-white`     |
@@ -54,3 +54,16 @@ RetainerMinimum is a special mini-section inserted between Pricing and HowItWork
 CTABanner is a special full-bleed dark section inserted between About and Contact. It is **excluded from the rotation cycle** — Contact stays Cream as if it directly follows About (White → Cream).
 
 When adding or removing a section, shift every subsequent section's background one step in the cycle to maintain the pattern. Update text/element colors to match (light text on Dark, dark text on White/Cream).
+
+## Section Vertical Rhythm
+
+All `<section>` elements use **`py-24`**. The `<footer>` is intentionally tighter (`py-16`) because it's terminal content, not a section.
+
+## Tokens & Shared Primitives
+
+Single-source-of-truth modules — prefer these over inline values:
+
+- **`lib/constants.ts`** — `COLORS`, `COMPANY` (brand strings), `LAYOUT` (scroll threshold, logo dimensions), `ICONS` (SVG stroke color/width/size), and all content arrays (`STATS`, `PAIN_POINTS`, `PRICING_TIERS`, `HOW_IT_WORKS_STEPS`, `CONTACT_PACKAGES`).
+- **`lib/animations.ts`** — `fadeUp`, `stagger`, `headerSlideIn`, `EASE_HEADER_IN`, `defaultViewport`, `tightViewport`.
+- **`app/globals.css`** — color tokens declared under `@theme inline` (`--color-background`, `--color-foreground`, `--color-muted`, `--color-divider`, `--color-gold`, `--color-icon-bg`). Consume via Tailwind utilities (`bg-foreground`, `text-gold`, `bg-icon-bg`). Never hardcode hex.
+- **`components/ui/`** — shared primitives: `SectionEyebrow` (gold accent bar + uppercase label), `Button` (variants: `primary` / `accent`; sizes: `sm` / `md` / `lg`; optional `fullWidth`), `FormField` (labeled input/select/textarea with paired `htmlFor`/`id`), `PainPointIcons` (icon-name → SVG map).

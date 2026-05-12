@@ -2,29 +2,8 @@
 
 import { motion } from 'framer-motion';
 import { fadeUp, stagger, defaultViewport } from '@/lib/animations';
-
-const steps = [
-  {
-    number: '01',
-    title: 'Free Consultation',
-    body: 'We learn your goals, your market, and what kind of content fits your brand. No pressure, no obligation.',
-  },
-  {
-    number: '02',
-    title: 'Content Strategy',
-    body: 'We build a plan around your goals — what to film, how often, and what will actually move the needle.',
-  },
-  {
-    number: '03',
-    title: 'We Shoot',
-    body: 'You show up. We handle everything on location — setup, direction, and getting the shots we need.',
-  },
-  {
-    number: '04',
-    title: 'Content Delivered',
-    body: 'Edited, optimized, and ready to post. Delivered to your inbox. You approve and share — that\'s it.',
-  },
-];
+import { HOW_IT_WORKS_STEPS } from '@/lib/constants';
+import SectionEyebrow from '@/components/ui/SectionEyebrow';
 
 export default function HowItWorks() {
   return (
@@ -37,12 +16,7 @@ export default function HowItWorks() {
       viewport={defaultViewport}
     >
       <div className="max-w-6xl w-full">
-        <motion.div variants={fadeUp} className="flex items-center gap-3 mb-6">
-          <span className="w-8 h-px bg-gold" />
-          <p className="text-xs uppercase tracking-widest text-gold font-medium">
-            How It Works
-          </p>
-        </motion.div>
+        <SectionEyebrow label="How It Works" className="mb-6" />
 
         <motion.h2
           variants={fadeUp}
@@ -55,7 +29,7 @@ export default function HowItWorks() {
           variants={stagger}
           className="grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/10"
         >
-          {steps.map((step) => (
+          {HOW_IT_WORKS_STEPS.map((step) => (
             <motion.div
               key={step.number}
               variants={fadeUp}

@@ -6,6 +6,7 @@
   --color-muted: #78706A;
   --color-divider: #D5CFC6;
   --color-gold: #C9A96E;
+  --color-icon-bg: #F0EDE8;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-serif: var(--font-playfair);
@@ -21,6 +22,6 @@ body {
 }
 
 body {
-  background-color: #ECE7DF;
-  color: #0D0D0D;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
 }
