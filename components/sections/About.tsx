@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { fadeUp, slideInRight, stagger, defaultViewport } from '@/lib/animations';
+import { fadeUp, stagger, defaultViewport } from '@/lib/animations';
 
 export default function About() {
   return (
@@ -30,7 +30,7 @@ export default function About() {
         </motion.div>
 
         {/* Bio — Mobile: below photo | Desktop: right half */}
-        <motion.div variants={slideInRight} className="w-full md:w-1/2 flex flex-col gap-6">
+        <motion.div variants={fadeUp} className="w-full md:w-1/2 flex flex-col gap-6">
           <motion.div variants={fadeUp} className="flex items-center gap-3">
             <span className="block w-8 h-px bg-gold" />
             <span className="text-xs uppercase tracking-widest text-gold">

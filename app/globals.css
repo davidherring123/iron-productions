@@ -15,6 +15,11 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 body {
   background-color: #ECE7DF;
   color: #0D0D0D;
