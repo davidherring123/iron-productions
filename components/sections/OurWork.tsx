@@ -3,8 +3,6 @@
 import { motion } from 'framer-motion';
 import { fadeUp, stagger, defaultViewport } from '@/lib/animations';
 
-const placeholders = Array.from({ length: 6 }, (_, i) => i + 1);
-
 export default function OurWork() {
   return (
     <motion.section
@@ -29,22 +27,13 @@ export default function OurWork() {
           Our Work
         </motion.h2>
 
-        {/* Mobile: 1 col | Desktop: 3 col */}
         <motion.div
-          variants={stagger}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+          variants={fadeUp}
+          className="aspect-video bg-divider rounded-xl flex items-center justify-center w-full"
         >
-          {placeholders.map((n) => (
-            <motion.div
-              key={n}
-              variants={fadeUp}
-              className="aspect-video bg-divider rounded-xl flex items-center justify-center"
-            >
-              <span className="text-muted text-xs uppercase tracking-wider">
-                Video {n}
-              </span>
-            </motion.div>
-          ))}
+          <span className="text-muted text-xs uppercase tracking-wider">
+            Video
+          </span>
         </motion.div>
       </div>
     </motion.section>

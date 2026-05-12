@@ -15,6 +15,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Iron Productions",
   description: "Done-for-you listing videos, social content, and brand films for real estate agents. Based in Charlotte, NC.",
+  icons: [
+    { rel: 'icon', url: '/light_favicon.ico', media: '(prefers-color-scheme: light)' },
+    { rel: 'icon', url: '/dark_favicon.ico', media: '(prefers-color-scheme: dark)' },
+  ],
 };
 
 export default function RootLayout({

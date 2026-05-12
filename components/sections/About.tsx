@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { fadeUp, slideInLeft, slideInRight, stagger, defaultViewport } from '@/lib/animations';
 
@@ -17,11 +18,15 @@ export default function About() {
         {/* Photo — Mobile: full width | Desktop: left half */}
         <motion.div
           variants={slideInLeft}
-          className="w-full md:w-1/2 aspect-[3/4] bg-divider rounded-2xl flex items-center justify-center"
+          className="relative w-full md:w-1/2 aspect-[3/4] rounded-2xl overflow-hidden"
         >
-          <span className="text-muted text-xs uppercase tracking-wider">
-            Founder Photo
-          </span>
+          <Image
+            src="/kameron_mullins.jpg"
+            alt="Kameron Mullins, founder of Iron Productions"
+            fill
+            className="object-cover"
+            priority
+          />
         </motion.div>
 
         {/* Bio — Mobile: below photo | Desktop: right half */}
