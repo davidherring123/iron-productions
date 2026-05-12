@@ -39,7 +39,7 @@ export default function Stats() {
             variants={fadeUp}
             className="py-16 md:py-0 md:px-16 first:pt-0 last:pb-0 md:first:pl-0 md:last:pr-0 text-center md:text-left"
           >
-            <p className="text-5xl md:text-6xl font-semibold text-background mb-4">
+            <p className="text-5xl md:text-6xl font-semibold text-gold mb-4">
               {stat.value}
             </p>
             <p className="text-sm leading-relaxed text-white/60">

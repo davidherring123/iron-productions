@@ -16,9 +16,9 @@ export default function Hero() {
       <div className="max-w-4xl w-full text-center md:text-left">
         <motion.p
           variants={fadeUp}
-          className="text-xs uppercase tracking-widest text-muted mb-6"
+          className="text-xs uppercase tracking-widest text-gold mb-6"
         >
-          Charlotte, NC
+          Charlotte, NC — Real Estate Video
         </motion.p>
 
         <motion.h1
@@ -26,7 +26,7 @@ export default function Hero() {
           className="text-4xl md:text-6xl lg:text-7xl font-semibold leading-tight tracking-tight text-foreground mb-6"
         >
           We Help Real Estate Agents Build a Brand That{' '}
-          <span className="italic">Brings Clients to Them</span>
+          <span className="italic text-gold">Brings Clients to Them</span>
         </motion.h1>
 
         <motion.p
